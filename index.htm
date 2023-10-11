@@ -49,9 +49,6 @@
 			}body,html,main{
 				height:100%;
 			}
-			br{
-				margin-bottom:0;
-			}
 			footer{
 				caret-color: transparent;
 				min-width:1ch;
@@ -152,20 +149,18 @@
 		<script>
 			'use strict';
 			const bar='~===================~~';
+			const cmd='_>_ ABOUT~_>_ HOME~~_>_ GITHUB~_>_ LINKEDIN~_>_ MAIL~_>_ PRINT~~_>_ REBOOT';
 			const foo=document.getElementsByTagName('footer')[0];
 			const his=document.getElementsByTagName('header')[0];
 			function entre(){
 				if(foo.textContent){
 					switch(foo.textContent.toUpperCase().trim()){
 						case'ABOUT':
-							prln('ABOUT'+bar+"I'M JUST A SIMPLE~MAN TRYING TO MAKE~HIS WAY IN THE~UNIVERSE.~~THANKS FOR~STOPPING BY...~~~_________-- ANGUS");
+							prln('ABOUT'+bar+"I'M JUST A SIMPLE~MAN TRYING TO MAKE~HIS WAY IN THE~UNIVERSE.~~THANKS FOR~STOPPING BY...~~~~_____________MENU >");
 							// prln('ABOUT'+bar+'___NAME: ANGUS~__CLASS: HACKER~___CITY: BAY AREA~_HEIGHT: 180PX~_WEIGHT: 145MB');
 							break;
 						case'GITHUB':
 							window.open('https://github.com/Starscade/');
-							break;
-						case'HELP':
-							prln('COMMANDS'+bar+'_>_ ABOUT~_>_ GITHUB~_>_ LINKEDIN~_>_ MAIL~_>_ PRINT~~_>_ REBOOT');
 							break;
 						case'HOME':
 							prln();
@@ -175,6 +170,9 @@
 							break;
 						case'MAIL':
 							window.open('mailto:mail@angus.sh?subject=Ahoy!&body=Dear Angus,');
+							break;
+						case'MENU':
+							prln('MENU'+bar+cmd);
 							break;
 						case'PRINT':
 							foo.textContent='';
@@ -187,13 +185,13 @@
 							},1000);
 							break;
 						default:
-							prln('ERROR'+bar+'TYPE "HELP" TO SEE~COMMANDS.');
+							prln('ERROR'+bar+cmd);
 							break;
 					}
 					foo.textContent='';
 				}
 			}
-			function prln(txt='HELLO'+bar+"I'M ANGUS.~~TYPE \"PRINT\" TO SEE~MY RESUME OR \"HELP\"~FOR MORE OPTIONS..."){
+			function prln(txt='HELLO'+bar+"I'M ANGUS.~~TYPE \"PRINT\" TO SEE~MY RESUME OR \"MENU\"~FOR MORE OPTIONS..."){
 				his.innerHTML="";
 				[...txt].forEach((c,i)=>{
 					switch(c){
