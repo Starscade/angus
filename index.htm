@@ -48,6 +48,17 @@
 				text-transform:uppercase;
 				user-select:none;
 			}
+			a{
+				color:DodgerBlue;
+				text-decoration:none;
+			}a:visited{
+				color:DodgerBlue;
+			}a::after{
+				content:'◥';
+				position:relative;
+				top:-.5ex;
+				vertical-align:super;
+			}
 			article{
 				display:none;
 				width:80ch;
@@ -120,27 +131,23 @@
 			<div>ANGUS SHEEHAN</div>
 			<div>==========================</div>
 			<br>
-			<div>EMAIL: ANGUS@STARSCA.DE</div>
-			<div>PHONE: (319) 343-8472</div>
-			<div>&nbsp; URL: ANGUS.SH/</div>
+			<div>EMAIL: <a href="mailto:MAIL@ANGUS.SH">MAIL@ANGUS.SH</a></div>
+			<div>PHONE: <a href="tel:+13193438472">(319) 343-8472</a></div>
+			<div>&nbsp; URL: <a href="https://angus.sh/"target="_Blank">ANGUS.SH</a></div>
 			<br><br><br>
 			<div>CERTIFICATIONS</div>
 			<div>==========================</div>
 			<br>
-			<div>&nbsp; &nbsp;// GOOGLE UX DESIGN</div>
-			<div>&nbsp; &nbsp; &nbsp; ----------------</div>
+			<div>&nbsp; &nbsp;// <a href="https://coursera.org/share/e3576a7b76da9c868fc76531e53b4e87">GOOGLE UX DESIGN</a></div>
 			<br><br><br>
 			<div>SKILLS</div>
 			<div>==========================</div>
 			<br>
 			<div>&nbsp; &nbsp;// HARDWARE ASSEMBLY</div>
-			<div>&nbsp; &nbsp; &nbsp; -----------------</div>
 			<br>
 			<div>&nbsp; &nbsp;// WEB DEVELOPMENT</div>
-			<div>&nbsp; &nbsp; &nbsp; ---------------</div>
 			<br>
 			<div>&nbsp; &nbsp;// SHELL SCRIPTING</div>
-			<div>&nbsp; &nbsp; &nbsp; ---------------</div>
 		</article>
 		<main>
 			<header></header>
@@ -200,7 +207,7 @@
 			function prln(tab='MENU'){
 				const tar={
 					'ABOUT':['ABOUT',"I'M JUST A SIMPLE~MAN TRYING TO MAKE~HIS WAY IN THE~UNIVERSE.~~THANKS FOR~STOPPING BY...~~~~_____________MENU >"],
-					'HOME':['HELLO',"I'M ANGUS.~~TYPE \"PRINT\" TO SEE~MY RESUME OR \"MENU\"~FOR MORE OPTIONS..."],
+					'HOME':['HELLO',"I'M ANGUS.~~TYPE \"PRINT\" TO SEE~MY RESUME OR \"MENU\"~FOR MORE OPTIONS."],
 					'MENU':['MENU','_>_ ABOUT~_>_ HOME~~_>_ GITHUB~_>_ LINKEDIN~_>_ MAIL~_>_ PRINT~~_>_ REBOOT'],
 					'REBOOT':['REBOOTING','PLEASE WAIT...'],
 					'ERR':['ERROR','INVALID COMMAND.']
