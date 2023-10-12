@@ -48,20 +48,8 @@
 				text-transform:uppercase;
 				user-select:none;
 			}
-			a{
-				color:DodgerBlue;
-				text-decoration:none;
-			}a:visited{
-				color:DodgerBlue;
-			}a::after{
-				content:'◥';
-				position:relative;
-				top:-.5ex;
-				vertical-align:super;
-			}
 			article{
 				display:none;
-				width:80ch;
 			}
 			body{
 				display:none;
@@ -88,10 +76,8 @@
 				content:'- >>> ';
 			}
 			header{
-				display:flex;
-				flex-direction:column;
 				flex-grow:1;
-				max-width:26ch;
+				white-space:pre;
 			}
 			main{
 				box-sizing:border-box;
@@ -114,11 +100,39 @@
 					--shado:none;
 					font-weight:normal;
 				}
+				a{
+					color:DodgerBlue;
+					text-decoration:none;
+				}a:visited{
+					color:DodgerBlue;
+				}a::after{
+					content:'◥';
+					position:relative;
+					top:-.5ex;
+					vertical-align:super;
+				}
 				article{
-					display:block;
+					display:flex;
+					flex-direction:column;
+					justify-content:space-between;
+				}
+				hr{
+					border:none;
+				}hr::after{
+					content:'==============================';
 				}
 				main{
 					display:none;
+				}
+				pre{
+					font-family:inherit;
+					font-size:inherit;
+					font-weight:bold;
+				}
+				section{
+					margin-bottom:1in;
+				}section:first-of-type{
+					line-height:100%;
 				}
 			}
 			@page{
@@ -128,26 +142,39 @@
 	</head>
 	<body class="crt">
 		<article>
-			<div>ANGUS SHEEHAN</div>
-			<div>==========================</div>
-			<br>
-			<div>EMAIL: <a href="mailto:MAIL@ANGUS.SH">MAIL@ANGUS.SH</a></div>
-			<div>PHONE: <a href="tel:+13193438472">(319) 343-8472</a></div>
-			<div>&nbsp; URL: <a href="https://angus.sh/"target="_Blank">ANGUS.SH</a></div>
-			<br><br><br>
-			<div>CERTIFICATIONS</div>
-			<div>==========================</div>
-			<br>
-			<div>&nbsp; &nbsp;// <a href="https://coursera.org/share/e3576a7b76da9c868fc76531e53b4e87">GOOGLE UX DESIGN</a></div>
-			<br><br><br>
-			<div>SKILLS</div>
-			<div>==========================</div>
-			<br>
-			<div>&nbsp; &nbsp;// HARDWARE ASSEMBLY</div>
-			<br>
-			<div>&nbsp; &nbsp;// WEB DEVELOPMENT</div>
-			<br>
-			<div>&nbsp; &nbsp;// SHELL SCRIPTING</div>
+			<section>
+				<pre> _____ _____ _____ _____ _____    _____ _____ _____ _____ _____ _____ _____ </pre>
+				<pre>|  _  |   | |   __|  |  |   __|  |   __|  |  |   __|   __|  |  |  _  |   | |</pre>
+				<pre>|     | | | |  |  |  |  |__   |  |__   |     |   __|   __|     |     | | | |</pre>
+				<pre>|__|__|_|___|_____|_____|_____|  |_____|__|__|_____|_____|__|__|__|__|_|___|</pre>
+				<div>============================================================================</div>
+				<br>
+				<pre> >>> INFORMATION TECHNOLOGY SUPPORT GENERALIST</pre>
+			</section>
+			<section>
+				<div>CONTACT</div>
+				<hr>
+				<br>
+				<div>EMAIL: <a href="mailto:MAIL@ANGUS.SH">MAIL@ANGUS.SH</a></div>
+				<div>PHONE: <a href="tel:+13193438472">(319) 343-8472</a></div>
+				<div>&nbsp; URL: <a href="https://angus.sh/"target="_Blank">ANGUS.SH</a></div>
+			</section>
+			<section>
+				<div>CERTIFICATES</div>
+				<hr>
+				<br>
+				<div>&nbsp; &nbsp;// <a href="https://coursera.org/share/e3576a7b76da9c868fc76531e53b4e87">GOOGLE UX DESIGN</a></div>
+			</section>
+			<section>
+				<div>SKILLS</div>
+				<hr>
+				<br>
+				<div>&nbsp; &nbsp;// HARDWARE ASSEMBLY</div>
+				<br>
+				<div>&nbsp; &nbsp;// WEB DEVELOPMENT</div>
+				<br>
+				<div>&nbsp; &nbsp;// SHELL SCRIPTING</div>
+			</section>
 		</article>
 		<main>
 			<header></header>
@@ -164,10 +191,15 @@
 				},50);
 			}
 			function entre(){
+				const lg=4;
+				const sm=1.33;
 				if(foo.textContent){
 					switch(foo.textContent.toUpperCase().trim()){
 						case'ABOUT':
-							prln('ABOUT');
+							prln('ABOUT',lg);
+							break;
+						case'CAT':
+							prln('@',sm);
 							break;
 						case'GITHUB':
 							window.open('https://github.com/Starscade/angus/');
@@ -194,42 +226,47 @@
 								location.reload();
 							},1000);
 							break;
+						case'SUDO':
+							prln('!',sm);
+							break;
+						case'WHOAMI':
+							prln('?',sm);
+							break;
 						default:
-							prln('ERR');
-							setTimeout(()=>{
-								prln();
-							},1000);
+							prln('ERR',sm);
 							break;
 					}
 					foo.textContent='';
 				}
 			}
-			function prln(tab='MENU'){
+			function prln(tab='MENU',tau=0){
 				const tar={
-					'ABOUT':['ABOUT',"I'M JUST A SIMPLE~MAN TRYING TO MAKE~HIS WAY IN THE~UNIVERSE.~~THANKS FOR~STOPPING BY...~~~~_____________MENU >"],
+					'ABOUT':['ABOUT',"I'M JUST A SIMPLE~MAN TRYING TO MAKE~HIS WAY IN THE~UNIVERSE.~~THANKS FOR~ASKING!"],
 					'HOME':['HELLO',"I'M ANGUS.~~TYPE \"PRINT\" TO SEE~MY RESUME OR \"MENU\"~FOR MORE OPTIONS."],
-					'MENU':['MENU','_>_ ABOUT~_>_ HOME~~_>_ GITHUB~_>_ LINKEDIN~_>_ MAIL~_>_ PRINT~~_>_ REBOOT'],
+					'MENU':['MENU',' >  ABOUT~ >  HOME~~ >  GITHUB~ >  LINKEDIN~ >  MAIL~ >  PRINT~~ >  REBOOT'],
 					'REBOOT':['REBOOTING','PLEASE WAIT...'],
-					'ERR':['ERROR','INVALID COMMAND.']
+					'ERR':['ERROR','INVALID COMMAND.'],
+					'!':['!!!',"U NO DO SU."],
+					'?':['???','BEATS ME, BUDDY.'],
+					'@':['DOG','WOOF.']
 				};
 				const msg=tar[tab][0]+'~===================~~'+tar[tab][1];
 				his.innerHTML="";
 				[...msg].forEach((c,i)=>{
-					switch(c){
-						case'~':
-							c='<br>';
-							break;
-						case'_':
-							c='&nbsp;';
-							break;
-						default:
-							c=c;
-					}
-					setTimeout(()=>{
+					if(c==='~')c="\n";
+					const t=setTimeout(()=>{
 						his.innerHTML+=c;
 					},i*10);
 				});
 				bump();
+				if(tau){
+					setTimeout(()=>{
+						prln();
+					},tau*1000);
+				}
+			}
+			document.body.onpointerdown=()=>{
+				foo.focus();
 			}
 			foo.onbeforeinput=e=>{
 				e.preventDefault();
@@ -245,20 +282,10 @@
 							foo.textContent+=e.data;
 						}
 						break;
-					default:
-						console.warn('ILLEGAL INPUT');
-						break;
 				}
 			}
 			foo.onblur=()=>{
-				setTimeout(()=>{
-					foo.focus();
-				},100);
-			}
-			window.onafterprint=(e)=>{
-				setTimeout(()=>{
-					foo.focus();
-				},100);
+				foo.focus();
 			}
 			setTimeout(()=>{
 				document.body.style.display='block';
