@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport"content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
 		<link rel="icon"href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-		<title>$> _</title>
+		<title>>>></title>
 		<style>
 			@font-face{
 				font-family:'Font';
@@ -35,7 +35,10 @@
 				--pt:12pt;
 				--shado:0 0 2rem #adff2faa;
 				background-color:var(--bg);
-				background-image:radial-gradient(ellipse,var(--bg) 67%,#b1ef1003);
+				/* background-image:radial-gradient(ellipse,#b1ef1011 50%,transparent); */
+				/* background-image:radial-gradient(ellipse,transparent 50%,#b1ef1011); */
+				background-image:radial-gradient(ellipse,#b1ef1033 47%,transparent);
+				box-shadow:inset 0 0 2rem Black;
 				color:var(--fg);
 				cursor:none;
 				font-family:'Font',monospace;
@@ -47,6 +50,18 @@
 				text-shadow:var(--shado);
 				text-transform:uppercase;
 				user-select:none;
+			}
+			a{
+				color:DodgerBlue;
+				text-decoration:none;
+			}a:visited{
+				color:DodgerBlue;
+			}a::after{
+				content:'◥';
+				line-height:0;
+				position:relative;
+				top:-.5ex;
+				vertical-align:super;
 			}
 			article{
 				display:none;
@@ -73,7 +88,7 @@
 				width:1ch;
 			}footer::before{
 				animation:zzz .5s linear infinite;
-				content:'- >>> ';
+				content:'~ >>> ';
 			}
 			header{
 				flex-grow:1;
@@ -88,6 +103,15 @@
 			.crt{
 				animation:crt .1s cubic-bezier(.5,.885,.32,1.275);
 			}
+			.flex{
+				display:flex;
+				justify-content:space-between;
+			}.flex>section{
+				align-self:flex-start;
+			}
+			#logo{
+				line-height:100%;
+			}
 			@media(orientation:portrait){
 				:root{
 					--pt:8pt;
@@ -98,23 +122,13 @@
 					--bg:White;
 					--fg:Black;
 					--shado:none;
+					box-shadow:none;
 					font-weight:normal;
-				}
-				a{
-					color:DodgerBlue;
-					text-decoration:none;
-				}a:visited{
-					color:DodgerBlue;
-				}a::after{
-					content:'◥';
-					position:relative;
-					top:-.5ex;
-					vertical-align:super;
 				}
 				article{
 					display:flex;
 					flex-direction:column;
-					justify-content:space-between;
+					height:100%;
 				}
 				hr{
 					border:none;
@@ -129,11 +143,6 @@
 					font-size:inherit;
 					font-weight:bold;
 				}
-				section{
-					margin-bottom:1in;
-				}section:first-of-type{
-					line-height:100%;
-				}
 			}
 			@page{
 				margin:1in;
@@ -142,39 +151,128 @@
 	</head>
 	<body class="crt">
 		<article>
-			<section>
+			<section id="logo">
 				<pre> _____ _____ _____ _____ _____    _____ _____ _____ _____ _____ _____ _____ </pre>
 				<pre>|  _  |   | |   __|  |  |   __|  |   __|  |  |   __|   __|  |  |  _  |   | |</pre>
 				<pre>|     | | | |  |  |  |  |__   |  |__   |     |   __|   __|     |     | | | |</pre>
 				<pre>|__|__|_|___|_____|_____|_____|  |_____|__|__|_____|_____|__|__|__|__|_|___|</pre>
 				<div>============================================================================</div>
 				<br>
-				<pre> >>> INFORMATION TECHNOLOGY SUPPORT GENERALIST</pre>
+				<pre> >>> INFORMATION TECHNOLOGY & SUPPORT</pre>
 			</section>
-			<section>
-				<div>CONTACT</div>
-				<hr>
-				<br>
-				<div>EMAIL: <a href="mailto:MAIL@ANGUS.SH">MAIL@ANGUS.SH</a></div>
-				<div>PHONE: <a href="tel:+13193438472">(319) 343-8472</a></div>
-				<div>&nbsp; URL: <a href="https://angus.sh/"target="_Blank">ANGUS.SH</a></div>
-			</section>
-			<section>
-				<div>CERTIFICATES</div>
-				<hr>
-				<br>
-				<div>&nbsp; &nbsp;// <a href="https://coursera.org/share/e3576a7b76da9c868fc76531e53b4e87">GOOGLE UX DESIGN</a></div>
-			</section>
-			<section>
-				<div>SKILLS</div>
-				<hr>
-				<br>
-				<div>&nbsp; &nbsp;// HARDWARE ASSEMBLY</div>
-				<br>
-				<div>&nbsp; &nbsp;// WEB DEVELOPMENT</div>
-				<br>
-				<div>&nbsp; &nbsp;// SHELL SCRIPTING</div>
-			</section>
+			<br><br><br><br><br>
+			<div class="flex">
+				<div>
+					<section>
+						<div>CONTACT</div>
+						<hr>
+						<br>
+						<div>&nbsp; &nbsp;NAME: <a href="https://www.linkedin.com/in/starscade/"target="_Blank">ANGUS SHEEHAN</a></div>
+						<div>&nbsp; EMAIL: <a href="mailto:MAIL@ANGUS.SH"target="_Blank">MAIL@ANGUS.SH</a></div>
+						<div>&nbsp; PHONE: <a href="tel:+13193438472"target="_Blank">(319) 343-8472</a></div>
+						<div>&nbsp; &nbsp;CITY: <a href="https://www.openstreetmap.org/#map=12/37.5306/-122.0694&layers=H"target="_Blank">FREMONT, CA</a></div>
+						<div>&nbsp; &nbsp; URL: <a href="https://angus.sh/"target="_Blank">ANGUS.SH</a></div>
+					</section>
+					<br><br><br><br><br>
+					<section>
+						<div>CERTIFICATES</div>
+						<hr>
+						<br>
+						<div>&nbsp; &nbsp;// <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/4UH6AB2M3TFJ">GOOGLE IT SUPPORT</a></div>
+						<div>&nbsp; &nbsp; &nbsp; <small>Coursera, 2023</small></div>
+						<br>
+						<div>&nbsp; &nbsp;// <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/FCRHSVV6BNRL">GOOGLE UX DESIGN</a></div>
+						<div>&nbsp; &nbsp; &nbsp; <small>Coursera, 2023</small></div>
+					</section>
+					<br><br><br><br><br>
+					<section>
+						<div>SKILLS</div>
+						<hr>
+						<br>
+						<div>&nbsp; &nbsp;// CUSTOMER SERVICE</div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ EMPATHY</small></div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ COMMUNICATION</small></div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ DE-ESCALATION</small></div>
+						<br>
+						<div>&nbsp; &nbsp;// NETWORK KNOWLEDGE</div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ ROUTING, DNS, PROXIES</small></div>
+						<br>
+						<div>&nbsp; &nbsp;// WEB DESIGN</div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ HTML5, CSS, JAVASCRIPT</small></div>
+						<br>
+						<div>&nbsp; &nbsp;// SYSTEM ADMINISTRATION</div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ SOFTWARE MANAGMENT</small></div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ OS CONFIGURATION</small></div>
+						<br>
+						<div>&nbsp; &nbsp;// REMOTE MANAGMENT</div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ VIRTUAL MACHINES</small></div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ DIRECTORY SERVICES</small></div>
+						<br>
+						<div>&nbsp; &nbsp;// HARDWARE ARCHITECTURE</div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ COMPONENTS & ASSEMBLY</small></div>
+						<br>
+						<div>&nbsp; &nbsp;// CRYPTOLOGY</div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ ENCRYPTION & HASHING</small></div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ TLS CERTIFICATES</small></div>
+						<!-- <br>
+						<div>&nbsp; &nbsp;// SHELL SCRIPTING</div>
+						<div>&nbsp; &nbsp; &nbsp; <small>+ BASH, POWERSHELL, SSH</small></div>
+						<br> -->
+					</section>
+				</div>
+				<div>
+					<section>
+						<div>BRIEF</div>
+						<hr>
+						<br>
+						<div>&nbsp; BURGEONING SUPPORT PROFESSIONAL</div>
+						<div>&nbsp; WITH A PASSION FOR THE INTERNET</div>
+						<div>&nbsp; AND OVER TEN YEARS OF CUSTOMER-</div>
+						<div>&nbsp; FACING EXPERIENCE</div>
+					</section>
+					<br><br><br><br><br><br>
+					<section>
+						<div>EXPERIENCE</div>
+						<hr>
+						<br>
+						<div>&nbsp; &nbsp;// FREELANCE WEBMASTER</div>
+						<div>&nbsp; &nbsp; &nbsp; <small>2002 -- PRESENT</small></div>
+						<br>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ DESGIN & MANAGE PERSONAL</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>&nbsp; WEBSITES FOR FRIENDS AND</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>&nbsp; FAMILY</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ MAINTAIN DNS RECORDS</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ INSTALL TLS CERTIFICATES</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ DEVELOP CUSTOM API<small>S</small></small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ SSH/SFTP ACCESS TRAINING</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ LINKING MAIL ACCOUNTS</small></div>
+						<br><br>
+						<div>&nbsp; &nbsp;// FRY'S ELECTRONICS</div>
+						<div>&nbsp; &nbsp; &nbsp; <small>2010</small></div>
+						<br>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ HELPED FOLK SOLVE THEIR</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>&nbsp; COMPUTER CONUNDRUMS VIA</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>&nbsp; ONE-ON-ONE CONSULTATION</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ MAINTAINED SHOW DEVICES</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ INSTALLED LICENSE KEYS</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ REPRESENTED MY TEAM AT</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>&nbsp; VENDOR EVENTS</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ ROUTED CABLING</small></div>
+						<br><br>
+						<div>&nbsp; &nbsp;// RED ROCK COFFEE</div>
+						<div>&nbsp; &nbsp; &nbsp; <small>2006-2010</small></div>
+						<br>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ FUELED HUNDREDS OF TOP TECH</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>&nbsp; PROFESSIONALS EVERY MORNING</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>&nbsp; WITH PREMIUM, THIRD-WAVE</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>&nbsp; ESPRESSO</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ FOSTERED CONNECTIONS WITH</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>&nbsp; FOLKS FROM MOZILLA, MEEBO,</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>&nbsp; AND EVERNOTE</small></div>
+						<div>&nbsp; &nbsp; &nbsp; &nbsp;<small>+ CLEANED TOILETS</small></div>
+					</section>
+				</div>
+			</div>
 		</article>
 		<main>
 			<header></header>
@@ -184,6 +282,7 @@
 			'use strict';
 			const foo=document.getElementsByTagName('footer')[0];
 			const his=document.getElementsByTagName('header')[0];
+			let CMD={'NEX':'','PRE':''};
 			function bump(){
 				document.body.classList.toggle('crt');
 				setTimeout(()=>{
@@ -191,15 +290,19 @@
 				},50);
 			}
 			function entre(){
-				const lg=4;
-				const sm=1.33;
+				const sec=1.33;
 				if(foo.textContent){
 					switch(foo.textContent.toUpperCase().trim()){
 						case'ABOUT':
-							prln('ABOUT',lg);
+							prln('ABOUT',3);
 							break;
 						case'CAT':
-							prln('@',sm);
+							prln('@',sec);
+							break;
+						case'CLOCK':
+						case'DATE':
+						case'TIME':
+							prln('DATE',sec);
 							break;
 						case'GITHUB':
 							window.open('https://github.com/Starscade/angus/');
@@ -210,11 +313,17 @@
 						case'LINKEDIN':
 							window.open('https://linkedin.com/in/starscade/');
 							break;
+						case'LS':
+							prln('LS',sec);
+							break;
 						case'MAIL':
 							window.open('mailto:mail@angus.sh?subject=Ahoy!&body=Dear Angus,');
 							break;
 						case'MENU':
 							prln();
+							break;
+						case'PING':
+							prln('PING',sec);
 							break;
 						case'PRINT':
 							foo.textContent='';
@@ -227,26 +336,35 @@
 							},1000);
 							break;
 						case'SUDO':
-							prln('!',sm);
+							prln('!',sec);
+							break;
+						case'TOP':
+							prln('TOP',3);
 							break;
 						case'WHOAMI':
-							prln('?',sm);
+							prln('?',sec);
 							break;
 						default:
-							prln('ERR',sm);
+							prln('ERR',sec);
 							break;
 					}
+					CMD['PRE']=foo.textContent;
+					CMD['NEX']='';
 					foo.textContent='';
 				}
 			}
 			function prln(tab='MENU',tau=0){
 				const tar={
-					'ABOUT':['ABOUT',"I'M JUST A SIMPLE~MAN TRYING TO MAKE~HIS WAY IN THE~UNIVERSE.~~THANKS FOR~ASKING!"],
+					'ABOUT':['ABOUT',"I'M JUST A SIMPLE~MAN TRYING TO MAKE~HIS WAY IN THE~UNIVERSE."],
+					'DATE':['DATE',' '+new Date().toLocaleDateString("en-US",{weekday:'short',year:'numeric',month:'numeric',day:'numeric'})],
 					'HOME':['HELLO',"I'M ANGUS.~~TYPE \"PRINT\" TO SEE~MY RESUME OR \"MENU\"~FOR MORE OPTIONS."],
+					'LS':['LIST','1. MILK~2. EGGS~3. CEREAL'],
 					'MENU':['MENU',' >  ABOUT~ >  HOME~~ >  GITHUB~ >  LINKEDIN~ >  MAIL~ >  PRINT~~ >  REBOOT'],
+					'PING':['KNOCK KNOCK',"WHO'S THERE?"],
 					'REBOOT':['REBOOTING','PLEASE WAIT...'],
+					'TOP':['BOTTOM','PID    PROCESS~~1      BOOTSTRAP (LEATHER)~72     GOOEY INTERFACE'],
 					'ERR':['ERROR','INVALID COMMAND.'],
-					'!':['!!!',"U NO DO SU."],
+					'!':['!!!',"NO...U!"],
 					'?':['???','BEATS ME, BUDDY.'],
 					'@':['DOG','WOOF.']
 				};
@@ -265,6 +383,18 @@
 					},tau*1000);
 				}
 			}
+			document.body.onkeydown=e=>{
+				if(e.key==='ArrowDown'){
+					if(CMD['NEX']){
+						foo.textContent=CMD['NEX'];
+					}else{
+						foo.textContent='';
+					}
+				}
+				if(e.key==='ArrowUp'){
+					if(CMD['PRE'])foo.textContent=CMD['PRE'];
+				}
+			}
 			document.body.onpointerdown=()=>{
 				foo.focus();
 			}
@@ -280,6 +410,7 @@
 					case'insertText':
 						if(/[A-Za-z]/.test(e.data)){
 							foo.textContent+=e.data;
+							CMD['NEX']=foo.textContent;
 						}
 						break;
 				}
@@ -298,13 +429,9 @@
 			setInterval(()=>{
 				document.body.style.opacity=.8+Math.random();
 			},100);
-			setInterval(()=>{
-				if(document.title==='$> _'){
-					document.title='$> ';
-				}else{
-					document.title='$> _';
-				}
-			},1000);
+			console.clear();
+			console.warn("Whatchu lookin' at?");
+			console.error('Get off my lawn!');
 		</script>
 	</body>
 </html>
