@@ -64,6 +64,8 @@
 			}
 			body{
 				margin:0;
+			}body,html,main{
+				height:100%;
 			}
 			footer{
 				font-size:.5rem;
@@ -75,6 +77,8 @@
 			img{
 				height:auto;
 				margin:0 auto;
+				position:relative;
+				transform:translateX(-4%);
 				width:6ch;
 			}
 			main{
@@ -84,7 +88,6 @@
 				box-sizing:border-box;
 				display:flex;
 				flex-direction:column;
-				height:100vh;
 				justify-content:center;
 			}
 		</style>
@@ -93,7 +96,7 @@
 		<main>
 			<header>I LOVE U</header>
 			<!-- <article><span>💘</span></article> -->
-			<img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/animated/1f498.gif">
+			<div><img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/animated/1f498.gif"></div>
 			<footer>ELAINE</footer>
 		</main>
 	</body>
