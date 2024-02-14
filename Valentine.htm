@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"oncontextmenu="return false">
+	<head>
+		<meta charset="utf-8">
+		<meta name="theme-color"content="Black">
+		<meta name="viewport"content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
+		<link rel="icon"href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+		<title>💘</title>
+		<style>
+			@font-face{
+				font-family:'Font';
+				src:url('https://fonts.gstatic.com/s/permanentmarker/v16/Fh4uPib9Iyv2ucM6pGQMWimMp004La2Cfw.woff2');
+			}
+			@keyframes fay{
+				from{
+					opacity:0;
+				}
+			}
+			@keyframes scroll{
+				from{
+					background-position:-29px 0;
+				}
+			}
+			@keyframes throb{
+				0%{
+					font-size:1rem;
+				}33%{
+					font-size:2rem;
+				}50%{
+					font-size:1rem;
+				}67%{
+					font-size:2rem;
+				}
+			}
+			:root{
+				--bg:#3298a5;
+				--fg:White;
+				--pt:72pt;
+				--pad:1rem;
+				--rad:calc(var(--pad)/2);
+				--bord:calc(.1*var(--pad)) solid;
+				--shado:3pt 3pt 0 #000000aa;
+				animation:scroll 1s linear infinite;
+				background:repeating-linear-gradient(45deg,transparent,transparent 10px,Pink 10px,Pink 20px);
+				color:var(--fg);
+				font-family:'Font',sans-serif;
+				font-size:var(--pt);
+				letter-spacing:2pt;
+				text-align:center;
+				text-shadow:var(--shado);
+				user-select:none;
+			}
+			article{
+				animation:throb 1s cubic-bezier(.165,.84,.44,1) infinite;
+				height:32pt;
+				padding:var(--pad);
+				position:relative;
+				text-shadow:var(--shado);
+			}article>span{
+				position:absolute;
+				transform:translate(-50%,-50%);
+			}
+			body{
+				margin:0;
+			}
+			footer{
+				font-size:.5rem;
+			}
+			header{
+				font-size:.42rem;
+				margin-bottom:.5rem;
+			}
+			main{
+				align-items:stretch;
+				animation:fay 1s;
+				background-image:radial-gradient(ellipse at center,Pink,transparent);
+				box-sizing:border-box;
+				display:flex;
+				flex-direction:column;
+				height:100vh;
+				justify-content:center;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<header>I LOVE U</header>
+			<article><span>💘</span></article>
+			<footer>ELAINE</footer>
+		</main>
+		<script>
+			'use strict'
+			const art=document.getElementsByTagName('article')[0]
+		</script>
+	</body>
+</html>
