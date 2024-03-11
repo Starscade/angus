@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"oncontextmenu="return false">
+	<head>
+		<meta charset="utf-8">
+		<meta name="theme-color"content="Black">
+		<meta name="viewport"content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
+		<link rel="icon"href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+		<title>🟥🟨🟦</title>
+		<style>
+			@font-face{
+				font-family:'F';
+				src:url(https://fonts.gstatic.com/s/madimione/v1/2V0YKIEADpA8U6RygDnZVFMiBw.woff2);
+			}
+			@keyframes fay{
+				from{
+					opacity:0;
+				}
+			}
+			@keyframes slot{
+				to{
+					transform:translateY(calc(260px - 100%));
+				}
+			}
+			::-webkit-scrollbar{
+				height:var(--pad);
+				width:var(--pad);
+			}::-webkit-scrollbar-track{
+				background-color:transparent;
+			}::-webkit-scrollbar-thumb{
+				background-color:var(--fg);
+				border:calc(var(--pad)/3) solid var(--bg);
+				border-radius:calc(var(--pad)/2);
+			}
+			::selection{
+				background-color:var(--fg);
+				color:var(--bg);
+			}
+			:root{
+				--ax:DodgerBlue;
+				--bg:White;
+				--fg:Red;
+				--pt:48pt;
+				--pad:1rem;
+				--rad:calc(var(--pad)/2);
+				--bord:.1rem solid;
+				--shado:0 0 2px Black;
+				background:Yellow;
+				color:var(--fg);
+				font-family:'F',sans-serif;
+				font-size:var(--pt);
+				text-align:center;
+				/* text-transform:uppercase; */
+				user-select:none;
+			}
+			article{
+				backdrop-filter:blur(1rem);
+				border:2px solid Black;
+				border-radius:.5rem;
+				padding:1rem;
+			}
+			body{
+				margin:0;
+			}
+			main{
+				animation-name:fay;
+				background:url('wall.webp');
+				background-position:center;
+				background-repeat:no-repeat;
+				background-size:cover;
+				height:100vh;
+			}
+			.anim{
+				animation-duration:1s;
+				animation-timing-function:ease-in-out;
+			}
+			.flex{
+				align-items:center;
+				display:flex;
+				flex-direction:column;
+				justify-content:center;
+			}
+			.slot{
+				animation-fill-mode:forwards;
+				animation-name:slot;
+			}
+			#go{
+				align-content:center;
+				background:Red radial-gradient(circle at top left,Pink,transparent);
+				border:3pt solid Firebrick;
+				border-radius:50%;
+				box-shadow:2pt 2pt 2px Black;
+				color:White;
+				cursor:pointer;
+				display:flex;
+				flex-wrap:wrap;
+				font-size:1rem;
+				height:3rem;
+				justify-content:center;
+				margin:auto;
+				margin-top:1rem;
+				outline:2px solid Black;
+				width:3rem;
+			}#go:active{
+				background-image:radial-gradient(circle at bottom right,Pink,transparent);
+				box-shadow:none;
+				transform:translate(2pt,2pt);
+			}
+			#lcd{
+				background-color:var(--bg);
+				border:2px solid;
+				border-radius:9px;
+				box-shadow:inset 0 0 .5rem .1rem Black;
+				color:Black;
+				cursor:pointer;
+				height:4rem;
+				overflow:hidden;
+				width:12ch;
+			}
+			#slot>div{
+				align-content:center;
+				display:flex;
+				flex-wrap:wrap;
+				height:260px;
+			}
+		</style>
+	</head>
+	<body>
+		<main class="anim bg flex">
+			<article>
+				<div id="lcd">
+					<div id="slot"class="anim flex">
+						<div>? ? ?</div>
+					</div>
+				</div>
+				<div id="go">SPIN</div>
+				</article>
+		</main>
+		<script>
+			'use strict'
+			const GO=document.getElementById('go')
+			const LCD=document.getElementById('lcd')
+			const SETS="Agrabah,Bunny (Freebie),Isabelle,Kapp'n,Maple (Freebie),Peter Pan,Steamboat Mickey"
+			const SLOT=document.getElementById('slot')
+			function fill(){
+				SETS.split(',').sort(()=>Math.random()-0.5).forEach(SET=>{
+					const S=document.createElement('div')
+					S.textContent=SET
+					SLOT.appendChild(S)
+				})
+			}
+			GO.onclick=()=>{
+				fill()
+				SLOT.classList.toggle('slot')
+				setTimeout(()=>{
+					const WINNER=SLOT.children[SLOT.children.length-1]
+					console.log(WINNER)
+					SLOT.classList.toggle('slot')
+					SLOT.innerHTML=''
+					SLOT.appendChild(WINNER)
+				},1000)
+			}
+			// LCD.onclick=()=>{
+			// 	const PROM=prompt('')
+			// }
+		</script>
+	</body>
+</html>
