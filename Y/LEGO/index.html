@@ -13,7 +13,7 @@
 			}
 			@font-face{
 				font-family:'S';
-				src:url(https://fonts.gstatic.com/s/notosanssymbols/v41/rP2dp3q65FkAtHfwd-eIS2brbDN6gzmVyK6L2Q.woff2);
+				src:url(https://fonts.gstatic.com/s/notosanssymbols2/v23/I_uyMoGduATTei9eI8daxVHDyfisHr71-vrgfE71.woff2);
 			}
 			@keyframes fay{
 				from{
@@ -35,7 +35,7 @@
 				--shado:-.1rem -.1rem .2rem .1rem Goldenrod,.1rem .1rem .2rem Khaki;
 				background:White;
 				color:var(--fg);
-				font-family:'F','S',sans-serif;
+				font-family:'F','S';
 				font-size:36pt;
 				text-align:center;
 				user-select:none;
@@ -65,8 +65,9 @@
 				box-shadow:inset 1px 1px 6px Black,var(--shado);
 				color:var(--bg);
 				cursor:pointer;
-				font-size:300%;
+				font-size:240%;
 				height:3rem;
+				line-height:0;
 				margin:var(--pad) auto;
 				width:3rem;
 			}#go:active{
@@ -93,11 +94,11 @@
 				:root{
 					font-size:12vmin;
 				}
-				#go{
-					bottom:0;
-					left:50%;
-					position:fixed;
-					transform:translateX(-50%);
+				main{
+					justify-content:space-between!important;
+				}
+				#lcd{
+					margin-top:calc(2*var(--pad));
 				}
 			}
 		</style>
@@ -109,14 +110,14 @@
 					<div>? ? ?</div>
 				</div>
 			</div>
-			<div id="go"class="flex">🟊</div>
+			<div id="go"class="flex">&#x1F7CA;</div>
 		</main>
 		<script>
 			'use strict'
 			const GO=document.getElementById('go')
 			const LCD=document.getElementById('lcd')
 			const SLOT=document.getElementById('slot')
-			let SETS="Agrabah,Bunnie,Isabelle,Kapp'n,Maple,Peter Pan,Steamboat Mickey,"
+			let SETS=""
 			let WAIT=false
 			let WINNER=""
 			function fill(){
