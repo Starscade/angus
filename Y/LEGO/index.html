@@ -174,7 +174,7 @@
 			PLOS.onclick=()=>{
 				const PROM=prompt('Paste your list...')
 				if(PROM&&PROM.split("\n").length>1){
-					localStorage['LEGO_SETS']=PROM.replaceAll("\r",'').replaceAll("\n",',')+','
+					localStorage['LEGO_SETS']=PROM.replaceAll(/\r|\n/g,',').replaceAll(/,+/g,',')+','
 					GO.click()
 				}
 			}
