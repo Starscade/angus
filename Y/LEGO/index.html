@@ -173,8 +173,8 @@
 			}
 			PLOS.onclick=()=>{
 				const PROM=prompt('Paste your list...')
-				if(PROM&&PROM.split("\r\n").length>1){
-					localStorage['LEGO_SETS']=PROM.replaceAll("\r\n",',')+','
+				if(PROM&&PROM.split("\n").length>1){
+					localStorage['LEGO_SETS']=PROM.replaceAll("\r",'').replaceAll("\n",',')+','
 					GO.click()
 				}
 			}
