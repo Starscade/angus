@@ -5,7 +5,7 @@
 		<meta name="theme-color"content="Gold">
 		<meta name="viewport"content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width">
 		<link rel="icon"href="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-		<title>🟥🟨</title>
+		<title>🟨🟥</title>
 		<style>
 			@font-face{
 				font-family:'F';
@@ -49,6 +49,22 @@
 				flex-direction:column;
 				height:100vh;
 			}
+			section{
+				position:relative;
+			}
+			.ball{
+				background:radial-gradient(circle at 33% 33%,Red 33%,Firebrick,Maroon);
+				border:var(--bord) DarkRed;
+				border-radius:50%;
+				box-shadow:inset 1px 1px 6px Black,var(--shado);
+				color:var(--bg);
+				cursor:pointer;
+				line-height:0;
+			}.ball:active{
+				box-shadow:inset 3px 3px 12px Black,var(--shado);
+				color:transparent;
+				text-shadow:0 1px 0 var(--bg);
+			}
 			.flex{
 				align-items:center;
 				display:flex;
@@ -59,21 +75,10 @@
 				animation:slip .67s cubic-bezier(.5,-.33,.1,1) forwards;
 			}
 			#go{
-				background:radial-gradient(circle at 33% 33%,Red 33%,Firebrick,Maroon);
-				border:var(--bord) DarkRed;
-				border-radius:50%;
-				box-shadow:inset 1px 1px 6px Black,var(--shado);
-				color:var(--bg);
-				cursor:pointer;
 				font-size:240%;
 				height:3rem;
-				line-height:0;
 				margin:var(--pad) auto;
 				width:3rem;
-			}#go:active{
-				box-shadow:inset 3px 3px 12px Black,var(--shado);
-				color:transparent;
-				text-shadow:0 1px 0 var(--bg);
 			}
 			#lcd{
 				background:radial-gradient(circle at top left,WhiteSmoke 50%,Silver);
@@ -84,6 +89,14 @@
 				height:var(--q);
 				overflow:hidden;
 				width:12ch;
+			}
+			#plos{
+				font-size:50%;
+				height:1rem;
+				position:absolute;
+				right:-2rem;
+				top:.5rem;
+				width:1rem;
 			}
 			#slot>div{
 				align-items:center;
@@ -110,21 +123,24 @@
 					<div>? ? ?</div>
 				</div>
 			</div>
-			<div id="go"class="flex">&#x1F7CA;</div>
+			<section>
+				<div id="plos"class="ball flex">☰</div>
+				<div id="go"class="ball flex">🟊</div>
+			</section>
 		</main>
 		<script>
 			'use strict'
 			const GO=document.getElementById('go')
-			const LCD=document.getElementById('lcd')
+			const PLOS=document.getElementById('plos')
 			const SLOT=document.getElementById('slot')
-			let SETS=""
+			let SETS=[]
 			let WAIT=false
 			let WINNER=""
 			function fill(){
-				const SETS_ARRAY=localStorage['LEGO_SETS'].split(',').splice(0,localStorage['LEGO_SETS'].split(',').length-1)
 				const S=document.createElement('div')
-				if(SETS_ARRAY.length>1){
-					SETS_ARRAY.sort(()=>Math.random()-.5).forEach(SET=>{
+				SETS=localStorage['LEGO_SETS'].split(',').splice(0,localStorage['LEGO_SETS'].split(',').length-1)
+				if(SETS.length>1){
+					SETS.sort(()=>Math.random()-.5).forEach(SET=>{
 						if(SET!==WINNER.textContent){
 							S.textContent=SET
 						}
@@ -134,7 +150,6 @@
 				}
 				SLOT.appendChild(S)
 				localStorage['LEGO_SETS']=localStorage['LEGO_SETS'].replace(WINNER.textContent+',','')
-				console.log('Sets:',localStorage['LEGO_SETS'])
 			}
 			GO.onclick=()=>{
 				if(WAIT===false){
@@ -148,17 +163,22 @@
 						SLOT.innerHTML=''
 						SLOT.appendChild(WINNER)
 						WAIT=false
+						if(localStorage['LEGO_SETS'].split(',').splice(0,localStorage['LEGO_SETS'].split(',').length-1).length-1>-1){
+							PLOS.textContent=localStorage['LEGO_SETS'].split(',').splice(0,localStorage['LEGO_SETS'].split(',').length-1).length-1
+						}else{
+							PLOS.textContent='☰'
+						}
+						console.log('Sets:',localStorage['LEGO_SETS'])
 					},667)
 				}
 			}
-			LCD.onclick=()=>{
+			PLOS.onclick=()=>{
 				const PROM=prompt('Paste your list...')
 				if(PROM&&PROM.split("\r\n").length>1){
 					localStorage['LEGO_SETS']=PROM.replaceAll("\r\n",',')+','
-					console.log(PROM)
+					GO.click()
 				}
 			}
-			if(!localStorage['LEGO_SETS'])localStorage['LEGO_SETS']=SETS
 		</script>
 	</body>
 </html>
