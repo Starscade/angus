@@ -126,8 +126,7 @@
 			<header></header>
 			<footer autofocus contenteditable="true" spellcheck="false"></footer>
 		</main>
-		<script>
-			'use strict'
+		<script type="module">
 			const foo = document.getElementsByTagName('footer')[0]
 			const his = document.getElementsByTagName('header')[0]
 			let CMD = { 'NEX': '', 'PRE': '' }
@@ -225,6 +224,10 @@
 						'MENU',
 						' >  ABOUT~ >  HOME~~ >  GITHUB~ >  MAIL~ >  PRINT~~ >  REBOOT',
 					],
+					'NO_MOUSE': [
+						'ERROR',
+						'NO MOUSE DETECTED.'
+					],
 					'PING': ['KNOCK KNOCK', "WHO'S THERE?"],
 					'REBOOT': ['REBOOTING', 'PLEASE WAIT...'],
 					'TOP': [
@@ -264,6 +267,7 @@
 				}
 			}
 			document.body.onpointerdown = () => {
+				prln('NO_MOUSE',2)
 				foo.focus()
 			}
 			foo.onbeforeinput = (e) => {
